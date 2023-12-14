@@ -28,7 +28,7 @@ public:
 
 	~Human()
 	{
-		delete name;
+		//delete name;
 		cout << "Destructor" << endl;
 		count--;
 	}
@@ -71,6 +71,18 @@ public:
 	Human copy()
 	{
 		return *this;
+	}
+
+	int getID()
+	{
+		return id;
+	}
+
+	void save(ofstream& out)
+	{
+		out << name << endl;
+		out << age << endl;
+		out << id << endl;
 	}
 };
 
