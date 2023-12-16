@@ -6,6 +6,9 @@
 #include"Array.h"
 #include"function.h"
 #include"Point.h"
+#include"Time.h"
+#include"Friend.h"
+#include"Fraction.h"
 
 #define PI 3.141592
 #define SQR(n) (n)*(n)
@@ -23,6 +26,48 @@ void printArray(Array a)
 
 int main()
 {
+
+	////////////////  16.12.2023  //////////////////
+
+	// ?:  ::  .  ->  sizeof
+
+	// =
+	// -  +  ++  --
+	// + - * / % += -= *= /= %=
+	// !
+	// == != > < >= <=
+	// & | >> << ^ 
+	// () [] 
+
+
+	Fraction f1(3, 5);
+	Fraction f2(2, 3);
+	//Fraction f3 = f1.add(f2);
+	Fraction f3 = ++f1;
+	f3.print();
+	//cout << f3 << endl;
+	//float ff = f1;
+
+
+
+	/*Array a(10);
+	a.setRandom(10, 20);
+	a.print();
+	printArray(a);
+	a.print();
+
+	Array b(a);*/
+
+
+	//Time t;
+
+
+	/*Temperature t(-1);
+	Humidity h(50);
+	
+	WeatherInformer w;
+	w.info(t, h);*/
+
 	//cout << Human::getCount() << endl;
 
 	//{
@@ -137,7 +182,7 @@ int main()
 	/*ofstream out("text3.txt", ios::app);
 	out << "Hello C++" << endl;*/
 
-	Point p;
+	/*Point p;
 	p.print();
 	p.get();
 
@@ -145,15 +190,15 @@ int main()
 	cout << SQR(5+1) << endl;
 
 	ЦИКЛ(10)
-		cout << "mama" << endl;
+		cout << "mama" << endl;*/
 
 	
 
 
-#ifdef TEST
-	int a[SIZE];
-#else
-	int* a = nullptr;
-#endif // TEST
+//#ifdef TEST
+//	int a[SIZE];
+//#else
+//	int* a = nullptr;
+//#endif // TEST
 
 }

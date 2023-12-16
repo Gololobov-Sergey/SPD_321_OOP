@@ -12,10 +12,10 @@ class Human
 
 public:
 
-	explicit Human(int id) : id(id), age(0), name{nullptr}
+	explicit Human(int id) : Human("No name", 0, id)
 	{
-		cout << "Constructor" << endl;
-		count++;
+		//cout << "Constructor" << endl;
+		//count++;
 	}
 
 	Human(const char* n, int a, int id) : id{id}
@@ -35,7 +35,6 @@ public:
 
 	void setName(const char* name)
 	{
-		
 		this->name = new char[strlen(name) + 1];
 		strcpy_s(this->name, strlen(name) + 1, name);
 	}

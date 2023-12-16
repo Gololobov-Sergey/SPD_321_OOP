@@ -12,13 +12,26 @@ class Array
 public:
 	explicit Array(int size)
 	{
+		cout << "Constructor" << endl;
 		this->size = size;
 		arr = new int[size];
 	}
 
+	Array(const Array& obj)
+	{
+		cout << "Constructor Copy" << endl;
+		size = obj.size;
+		arr = new int[size];
+		for (size_t i = 0; i < size; i++)
+		{
+			arr[i] = obj.arr[i];
+		}
+	}
+
 	~Array()
 	{
-		//delete[] arr;
+		delete[] arr;
+		cout << "Destructor" << endl;
 	}
 
 	void setRandom(int min = 0, int max = 9)
