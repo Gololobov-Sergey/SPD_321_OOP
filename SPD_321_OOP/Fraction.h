@@ -71,6 +71,15 @@ public:
 		return !ch;
 	}
 
+	void operator()(int c, int z)
+	{
+		ch = c;
+		zn = z;
+	}
+
+	friend ostream& operator<<(ostream& out, const Fraction& f);
+	friend istream& operator>>(istream& in, Fraction& f);
+
 	/*bool operator<(Fraction f)
 	{
 		return  (float)ch / zn < (float)f.ch / f.zn;
@@ -78,7 +87,32 @@ public:
 
 
 	//friend Fraction operator+(Fraction f1, Fraction f2);
+
+	/*operator float()
+	{
+		return (float)ch / zn;
+	}*/
+
+	Fraction operator+ (int n)
+	{
+		return *this;
+	}
 };
+
+ostream& operator<<(ostream& out, const Fraction& f)
+{
+	out << f.ch << "/" << f.zn << endl;
+	return out;
+}
+
+inline istream& operator>>(istream& in, Fraction& f)
+{
+	cout << "Ch : ";
+	in >> f.ch;
+	cout << "Zn : ";
+	in >> f.zn;
+	return in;
+}
 
 //Fraction operator+(Fraction f1, Fraction f2)
 //{

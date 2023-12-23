@@ -1,4 +1,4 @@
-﻿
+﻿#define CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include <fstream>
 
@@ -19,13 +19,73 @@
 
 using namespace std;
 
-void printArray(Array a)
+template<class T>
+void printArray(Array<T> a)
 {
 	a.print();
 }
 
+
+void func(float f)
+{
+
+}
+
+template<class T1, class T2>
+auto Sum(T1 a, T2 b)
+{
+	return a + b;
+}
+
 int main()
 {
+
+	////////////////  23.12.2023  //////////////////
+
+	Array<int> a(10);
+	a.setRandom();
+	a.print();
+	Array<int> b(a);
+	Array<int> c(10);
+	c.setRandom();
+	c = a;
+	c.print();
+
+	/*Array<Fraction> af(10);
+	af.setRandom();
+	af.print();*/
+
+	Array<float> af(5);
+	af.setRandom();
+	af.print();
+
+	Array<Human> ah(5);
+	//ah.setRandom();
+	ah.print2();
+
+	StaticArray<int, 10> aaaa;
+
+	/*cout << c.at(5) << endl;
+	cout << c[1] << endl;
+	cout << c["one"] << endl;
+	c(5);
+	c.print();*/
+
+	Fraction f(3, 5);
+	Fraction f3 = f + f;
+	f(4, 7);
+	f.print();
+	cin >> f;
+	cout << f << endl;
+
+	//float ff = f;
+	//func(f);
+
+	//f = f + 3;
+	//f = 3 + f;
+
+	string st = "mama";
+	
 
 	////////////////  16.12.2023  //////////////////
 
@@ -40,11 +100,11 @@ int main()
 	// () [] 
 
 
-	Fraction f1(3, 5);
-	Fraction f2(2, 3);
+	//Fraction f1(3, 5);
+	//Fraction f2(2, 3);
 	//Fraction f3 = f1.add(f2);
-	Fraction f3 = ++f1;
-	f3.print();
+	//Fraction f3 = ++f1;
+	//f3.print();
 	//cout << f3 << endl;
 	//float ff = f1;
 

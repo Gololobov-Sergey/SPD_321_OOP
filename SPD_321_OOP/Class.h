@@ -12,7 +12,9 @@ class Human
 
 public:
 
-	explicit Human(int id) : Human("No name", 0, id)
+	Human() :Human(0) {}
+
+	/*explicit */Human(int id) : Human("No name", 0, id)
 	{
 		//cout << "Constructor" << endl;
 		//count++;
@@ -32,6 +34,18 @@ public:
 		cout << "Destructor" << endl;
 		count--;
 	}
+
+	Human& operator=(const Human& obj)
+	{
+		return *this;
+	}
+
+	Human& operator=(int a)
+	{
+		return *this;
+	}
+
+
 
 	void setName(const char* name)
 	{
