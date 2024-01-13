@@ -133,11 +133,15 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Array.h" />
+    <ClInclude Include="Calc.h" />
     <ClInclude Include="Class.h" />
+    <ClInclude Include="DynamicStack.h" />
     <ClInclude Include="Fraction.h" />
     <ClInclude Include="Friend.h" />
     <ClInclude Include="function.h" />
+    <ClInclude Include="Node.h" />
     <ClInclude Include="Point.h" />
+    <ClInclude Include="Stack.h" />
     <ClInclude Include="Time.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

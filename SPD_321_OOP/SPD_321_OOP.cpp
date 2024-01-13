@@ -9,6 +9,8 @@
 #include"Time.h"
 #include"Friend.h"
 #include"Fraction.h"
+#include"Stack.h"
+#include"Calc.h"
 
 #define PI 3.141592
 #define SQR(n) (n)*(n)
@@ -40,30 +42,50 @@ auto Sum(T1 a, T2 b)
 int main()
 {
 
+	////////////////  13.01.2024  //////////////////
+
+	char exp[] = "2+2*3^2*2+5";
+	Calc c(exp);
+	cout << c.getResult() << endl;
+
+	//Stack<int> st; // = { 1, 1, 1, 1 };
+	//st.push(10);
+	//st.push(20);
+	//st.push(40);
+	//st.push(60);
+	//st.print();
+	//cout << st.peek() << endl;
+	//st.pop();
+	//st.pop();
+	//st.print();
+	//st.clear();
+	//st.print();
+
+
 	////////////////  23.12.2023  //////////////////
 
-	Array<int> a(10);
-	a.setRandom();
-	a.print();
-	Array<int> b(a);
-	Array<int> c(10);
-	c.setRandom();
-	c = a;
-	c.print();
+	//Array<int> a(10);
+	//a.setRandom();
+	//a.print();
+	//Array<int> b(a);
+	//Array<int> c(10);
+	//c.setRandom();
+	//c = a;
+	//c.print();
 
-	/*Array<Fraction> af(10);
-	af.setRandom();
-	af.print();*/
+	///*Array<Fraction> af(10);
+	//af.setRandom();
+	//af.print();*/
 
-	Array<float> af(5);
-	af.setRandom();
-	af.print();
+	//Array<float> af(5);
+	//af.setRandom();
+	//af.print();
 
-	Array<Human> ah(5);
-	//ah.setRandom();
-	ah.print2();
+	//Array<Human> ah(5);
+	////ah.setRandom();
+	//ah.print2();
 
-	StaticArray<int, 10> aaaa;
+	//StaticArray<int, 10> aaaa;
 
 	/*cout << c.at(5) << endl;
 	cout << c[1] << endl;
@@ -71,12 +93,12 @@ int main()
 	c(5);
 	c.print();*/
 
-	Fraction f(3, 5);
+	/*Fraction f(3, 5);
 	Fraction f3 = f + f;
 	f(4, 7);
 	f.print();
 	cin >> f;
-	cout << f << endl;
+	cout << f << endl;*/
 
 	//float ff = f;
 	//func(f);
@@ -84,7 +106,7 @@ int main()
 	//f = f + 3;
 	//f = 3 + f;
 
-	string st = "mama";
+	//string st = "mama";
 	
 
 	////////////////  16.12.2023  //////////////////
