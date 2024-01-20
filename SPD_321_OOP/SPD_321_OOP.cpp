@@ -11,6 +11,7 @@
 #include"Fraction.h"
 #include"Stack.h"
 #include"Calc.h"
+#include"Queue.h"
 
 #define PI 3.141592
 #define SQR(n) (n)*(n)
@@ -42,11 +43,37 @@ auto Sum(T1 a, T2 b)
 int main()
 {
 
+	////////////////  20.01.2024  //////////////////
+
+	//Queue<int> q;
+	//q.enqueue(10);
+	//q.enqueue(20);
+	//q.enqueue(30);
+	//q.enqueue(40);
+	//q.print();
+	///*q.dequeue();
+	//q.dequeue();
+	//q.print();
+	//cout << q.peek() << endl;*/
+	//q.ring();
+	//q.ring();
+	//q.print();
+
+
+	PriorityQueue<int> q;
+	q.enqueue(10, 2);
+	q.enqueue(20, 4);
+	q.enqueue(30, 1);
+	q.enqueue(40, 3);
+	q.enqueue(50, 3);
+	q.print();
+
+
 	////////////////  13.01.2024  //////////////////
 
-	char exp[] = "2+2*3^2*2+5";
+	/*char exp[] = "2+2*3^2*2+5";
 	Calc c(exp);
-	cout << c.getResult() << endl;
+	cout << c.getResult() << endl;*/
 
 	//Stack<int> st; // = { 1, 1, 1, 1 };
 	//st.push(10);

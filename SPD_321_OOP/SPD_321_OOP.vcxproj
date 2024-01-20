@@ -141,6 +141,7 @@
     <ClInclude Include="function.h" />
     <ClInclude Include="Node.h" />
     <ClInclude Include="Point.h" />
+    <ClInclude Include="Queue.h" />
     <ClInclude Include="Stack.h" />
     <ClInclude Include="Time.h" />
   </ItemGroup>
