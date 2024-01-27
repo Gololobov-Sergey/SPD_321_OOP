@@ -12,6 +12,8 @@
 #include"Stack.h"
 #include"Calc.h"
 #include"Queue.h"
+#include"ForwardList.h"
+#include"List.h"
 
 #define PI 3.141592
 #define SQR(n) (n)*(n)
@@ -40,8 +42,38 @@ auto Sum(T1 a, T2 b)
 	return a + b;
 }
 
+void IncTime(Human h)
+{
+	h.setAge(h.getAge() + 1);
+}
+
 int main()
 {
+	////////////////  27.01.2024  //////////////////
+
+	List<int> fl = { 1,2,3,4 };
+	fl.push_front(100);
+	fl.push_back(200);
+	fl.print();
+	fl.insert(999, 3);
+	fl.print();
+	fl.pop_front();
+	fl.print();
+	fl.pop_back();
+	fl.print();
+	/*fl.remove(2);
+	fl.print();
+	cout << fl[2] << endl;*/
+
+
+
+	/*PriorityQueue<Human> q;
+	q.enqueue(Human(0), 0);
+	q.enqueue(Human(0), 2);
+	q.enqueue(Human(0), 0);
+
+	q.superMethod();
+	q.forEach(IncTime);*/
 
 	////////////////  20.01.2024  //////////////////
 
@@ -60,14 +92,25 @@ int main()
 	//q.print();
 
 
-	PriorityQueue<int> q;
+	/*PriorityQueue<int> q;
 	q.enqueue(10, 2);
 	q.enqueue(20, 4);
 	q.enqueue(30, 1);
 	q.enqueue(40, 3);
 	q.enqueue(50, 3);
-	q.print();
+	q.print();*/
 
+
+	/*int i = 0;
+	while (true)
+	{
+		if (i % 2 == 0)
+			pass++;
+
+
+
+		i++;
+	}*/
 
 	////////////////  13.01.2024  //////////////////
 

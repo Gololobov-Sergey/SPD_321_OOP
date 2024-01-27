@@ -4,6 +4,7 @@
 #include<cassert>
 
 #include"Node.h"
+#include"Class.h"
 
 using namespace std;
 
@@ -165,6 +166,10 @@ public:
 	size_t length() const;
 	void clear();
 	void print() const;
+
+	void superMethod();
+
+	void forEach(void(*method)(T elem));
 };
 
 template<class T, class TPri>
@@ -275,4 +280,31 @@ void PriorityQueue<T, TPri>::print() const
 		temp = temp->next;
 	}
 	cout << endl;
+}
+
+template<class T, class TPri>
+void PriorityQueue<T, TPri>::superMethod()
+{
+}
+
+template<class T, class TPri>
+void PriorityQueue<T, TPri>::forEach(void(*method)(T elem))
+{
+	NodeP<T, TPri>* temp = first;
+	while (temp)
+	{
+		method(temp->value);
+		temp = temp->next;
+	}
+}
+
+template<>
+void PriorityQueue<Human, int>::superMethod()
+{
+	NodeP<Human, int>* temp = first;
+	while (temp)
+	{
+		temp->value.setAge(temp->value.getAge() + 1);
+		temp = temp->next;
+	}
 }

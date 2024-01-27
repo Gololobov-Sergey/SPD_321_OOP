@@ -6,8 +6,9 @@ struct Node
 {
 	T value;
 	Node* next;
+	Node* prev;
 
-	Node(const T& value) : value(value), next(nullptr) {}
+	Node(const T& value) : value(value), next(nullptr), prev(nullptr) {}
 };
 
 
