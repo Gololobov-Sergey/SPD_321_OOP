@@ -104,7 +104,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard>stdcpp14</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -133,6 +133,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Array.h" />
+    <ClInclude Include="BasePolice.h" />
+    <ClInclude Include="BTree.h" />
     <ClInclude Include="Calc.h" />
     <ClInclude Include="Class.h" />
     <ClInclude Include="DynamicStack.h" />
@@ -141,6 +143,7 @@
     <ClInclude Include="Friend.h" />
     <ClInclude Include="function.h" />
     <ClInclude Include="List.h" />
+    <ClInclude Include="Menu.h" />
     <ClInclude Include="Node.h" />
     <ClInclude Include="Point.h" />
     <ClInclude Include="Queue.h" />

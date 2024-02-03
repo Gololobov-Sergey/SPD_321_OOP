@@ -61,10 +61,10 @@ public:
 		return res;
 	}
 
-	auto operator<=>(Fraction f) 
+	/*auto operator<=>(Fraction f) 
 	{
 		return  (float)ch / zn <=> (float)f.ch / f.zn;
-	}
+	}*/
 
 	bool operator!()
 	{

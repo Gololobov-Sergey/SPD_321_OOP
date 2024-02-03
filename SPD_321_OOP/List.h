@@ -90,6 +90,23 @@ List<T>::~List()
 }
 
 template<class T>
+inline List<T>::List(const List<T>& fl)
+{
+}
+
+template<class T>
+inline List<T>& List<T>::operator=(const List<T>& fl)
+{
+	// TODO: вставьте здесь оператор return
+}
+
+template<class T>
+inline List<T> List<T>::operator+(const List<T>& fl)
+{
+	return List<T>();
+}
+
+template<class T>
 void List<T>::push_front(const T& value)
 {
 	if (size == 0)

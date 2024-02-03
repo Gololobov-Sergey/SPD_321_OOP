@@ -14,6 +14,9 @@
 #include"Queue.h"
 #include"ForwardList.h"
 #include"List.h"
+#include"BTree.h"
+#include"Menu.h"
+#include"BasePolice.h"
 
 #define PI 3.141592
 #define SQR(n) (n)*(n)
@@ -49,21 +52,41 @@ void IncTime(Human h)
 
 int main()
 {
+	////////////////  03.02.2024  //////////////////
+
+
+	BasePolice bp;
+	bp.menu();
+
+
+	/*int c = Menu::select_vertical({ "Add", "Delete", "Print", "Exit" }, HorizontalAlignment::Left);
+
+
+	BTree<int, int> b;
+	b.push_r(3, 3);
+	b.push_r(13, 13);
+	b.push_r(1, 1);
+	b.push_r(5, 5);
+	b.push_r(10, 10);
+	b.print();*/
+
 	////////////////  27.01.2024  //////////////////
 
-	List<int> fl = { 1,2,3,4 };
-	fl.push_front(100);
-	fl.push_back(200);
-	fl.print();
-	fl.insert(999, 3);
-	fl.print();
-	fl.pop_front();
-	fl.print();
-	fl.pop_back();
-	fl.print();
-	/*fl.remove(2);
-	fl.print();
-	cout << fl[2] << endl;*/
+	//ForwardList<int> fl = { 1,2,3,4 };
+	//fl.push_front(100);
+	//fl.push_back(200);
+	//fl.print();
+	//fl.insert(999, 3);
+	//fl.print();
+	////fl.pop_front();
+	////fl.print();
+	////fl.pop_back();
+	////fl.print();
+	///*fl.remove(2);
+	//fl.print();
+	//cout << fl[2] << endl;*/
+	//fl.Sort();
+	//fl.print();
 
 
 

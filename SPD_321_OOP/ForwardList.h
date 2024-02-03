@@ -43,7 +43,7 @@ public:
 	size_t length() const;
 	void print() const;
 
-	void sort() const;
+	void Sort();
 
 };
 
@@ -253,4 +253,45 @@ void ForwardList<T>::print() const
 		temp = temp->next;
 	}
 	cout << endl;
+}
+
+
+template<class T>
+void ForwardList<T>::Sort()
+{
+	bool check = true;
+	while(check)
+	{
+		Node<T>* prev = first;
+		Node<T>* pos = first;
+		Node<T>* pos1;
+		for (size_t j = 0; j < size-1; j++)
+		{
+			pos1 = pos->next;
+			if (pos->value > pos1->value)
+			{
+				if (prev == pos)
+				{
+					prev->next = pos1->next;
+					pos1->next = prev;
+					first = pos1;
+				}
+				else
+				{
+					pos->next = pos1->next;
+					pos1->next = pos;
+					prev->next = pos1;
+				}
+				prev = pos1;
+				pos1 = pos;
+				check = true;
+			}
+			else
+			{
+				prev = pos;
+				pos = pos1;
+				check = false;
+			}
+		}
+	}
 }
