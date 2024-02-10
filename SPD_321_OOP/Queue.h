@@ -298,13 +298,13 @@ void PriorityQueue<T, TPri>::forEach(void(*method)(T elem))
 	}
 }
 
-template<>
-void PriorityQueue<Human, int>::superMethod()
-{
-	NodeP<Human, int>* temp = first;
-	while (temp)
-	{
-		temp->value.setAge(temp->value.getAge() + 1);
-		temp = temp->next;
-	}
-}
+//template<>
+//void PriorityQueue<Human, int>::superMethod()
+//{
+//	NodeP<Human, int>* temp = first;
+//	while (temp)
+//	{
+//		temp->value.setAge(temp->value.getAge() + 1);
+//		temp = temp->next;
+//	}
+//}

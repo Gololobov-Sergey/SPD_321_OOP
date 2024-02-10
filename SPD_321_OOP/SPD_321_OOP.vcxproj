@@ -142,11 +142,13 @@
     <ClInclude Include="Fraction.h" />
     <ClInclude Include="Friend.h" />
     <ClInclude Include="function.h" />
+    <ClInclude Include="Inherit.h" />
     <ClInclude Include="List.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="Node.h" />
     <ClInclude Include="Point.h" />
     <ClInclude Include="Queue.h" />
+    <ClInclude Include="Relation.h" />
     <ClInclude Include="Stack.h" />
     <ClInclude Include="Time.h" />
   </ItemGroup>

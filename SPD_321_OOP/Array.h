@@ -134,14 +134,14 @@ void Array<float>::setRandom(float min, float max)
 	}
 }
 
-template<>
-void Array<Human>::setRandom(Human min, Human max)
-{
-	for (size_t i = 0; i < size; i++)
-	{
-		arr[i] = Human(i);
-	}
-}
+//template<>
+//void Array<Human>::setRandom(Human min, Human max)
+//{
+//	for (size_t i = 0; i < size; i++)
+//	{
+//		arr[i] = Human(i);
+//	}
+//}
 
 
 

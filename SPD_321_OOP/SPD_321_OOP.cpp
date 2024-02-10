@@ -17,6 +17,8 @@
 #include"BTree.h"
 #include"Menu.h"
 #include"BasePolice.h"
+#include"Relation.h"
+#include"Inherit.h"
 
 #define PI 3.141592
 #define SQR(n) (n)*(n)
@@ -39,24 +41,50 @@ void func(float f)
 
 }
 
+
 template<class T1, class T2>
 auto Sum(T1 a, T2 b)
 {
 	return a + b;
 }
 
-void IncTime(Human h)
-{
-	h.setAge(h.getAge() + 1);
-}
+//void IncTime(Human h)
+//{
+//	h.setAge(h.getAge() + 1);
+//}
 
 int main()
 {
+	////////////////  10.02.2024  //////////////////
+
+	/*C::Car car;
+	car.move();
+
+
+	A::Engine* engine = new A::Engine;
+	A::Car car1(engine);
+	car1.move();
+
+	car1.info();
+	A::STO sto;
+	sto.setEngine(car1.getEngine());
+	sto.test();
+	car1.info();*/
+
+
+	FootballPlayer fp("Zidan", 40, 1000);
+	fp.print();
+
+	/*Array<int> a(10);
+	Array<int> b(5);
+	a = a;*/
+
+
 	////////////////  03.02.2024  //////////////////
 
 
-	BasePolice bp;
-	bp.menu();
+	/*BasePolice bp;
+	bp.menu();*/
 
 
 	/*int c = Menu::select_vertical({ "Add", "Delete", "Print", "Exit" }, HorizontalAlignment::Left);
@@ -84,7 +112,7 @@ int main()
 	////fl.print();
 	///*fl.remove(2);
 	//fl.print();
-	//cout << fl[2] << endl;*/
+	//std::cout << fl[2] << endl;*/
 	//fl.Sort();
 	//fl.print();
 
