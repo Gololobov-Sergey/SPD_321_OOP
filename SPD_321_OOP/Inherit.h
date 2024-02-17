@@ -1,10 +1,11 @@
 #pragma once
 #include<iostream>
+#include"Animal.h"
 
 
 using namespace std;
 
-class Human
+class Human : public IInfo
 {
 	string name;
 	int age;
@@ -48,6 +49,11 @@ public:
 		cout << "Games : " << games << endl;
 	}
 
+	void info() override
+	{
+		Human::print();
+		cout << "Games : " << games << endl;
+	}
 };
 
 
@@ -98,7 +104,7 @@ public:
 };
 
 
-class WiFi : public Adapter
+class WiFi : virtual public Adapter
 {
 	int id;
 
@@ -114,7 +120,7 @@ public:
 	}
 };
 
-class LAN : public Adapter
+class LAN : virtual public Adapter
 {
 	int id;
 
@@ -135,8 +141,51 @@ class Router : public LAN, public WiFi
 	int id;
 
 public:
-	Router(int id, int idLAN, int idWiFi): id(id), LAN(idLAN), WiFi(idWiFi)
+	Router(int id, int idLAN, int idWiFi): 
+		id(id), LAN(idLAN), WiFi(idWiFi), Adapter()
 	{
 
+	}
+};
+
+
+
+class ILogError
+{
+public:
+	virtual~ILogError() {}
+	virtual void writeError(string error) = 0;
+};
+
+class FileLogError : public ILogError
+{
+	string path;
+
+public:
+
+	FileLogError(string path) : path(path)
+	{
+
+	}
+
+	virtual void writeError(string error) override
+	{
+		ofstream out(path, ios::app);
+		out << error << endl;
+		out.close();
+	}
+
+};
+
+class ConsoleLogError : public ILogError
+{
+
+public:
+
+	ConsoleLogError() { }
+
+	virtual void writeError(string error) override
+	{
+		cout << error << endl;
 	}
 };

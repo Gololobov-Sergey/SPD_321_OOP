@@ -55,20 +55,56 @@ auto Sum(T1 a, T2 b)
 //}
 
 
-void report(Animal& a)
+void report(IInfo* a)
 {
-	cout << a.getType() << endl;
+	a->info();
 }
 
+
+double SQRT(double d, ILogError* log)
+{
+	if (d < 0)
+	{
+		log->writeError("Arg is negative!!");
+		return 0;
+	}
+	return sqrt(d);
+}
 
 int main()
 {
 	////////////////  17.02.2024  //////////////////
 
 
-	Animal* c = new Cat("Tom", 3);
+	cout << SQRT(-15, new FileLogError("log.txt")) << endl;
+	cout << SQRT(-15, new ConsoleLogError()) << endl;
+
+
+	//Animal a("no name", 0);
+
+	//Animal* an[] = 
+	//{ 
+	//	/*new Animal("no name", 0),*/
+	//	new Cat("Tom", 3), 
+	//	new Dog("Spike", 2), 
+	//	new SiamCat("Murka", 4),
+	//	new Ravlik("Gary", 4),
+	//	new Fish("Nemo", 4)
+	//};
+
+	//for (size_t i = 0; i < 5; i++)
+	//{
+	//	report(an[i]);
+	//}
+
+	//FootballPlayer fp("Zidan", 40, 1000);
+	//report(&fp);
+
+
+
+	/*Animal* c = new Cat("Tom", 3);
 	cout << c->getType() << endl;
-	delete c;
+	delete c;*/
 
 
 	//Cat c("Tom", 3);
@@ -103,12 +139,14 @@ int main()
 	
 
 	AA a;
-	BB b;
+	BB b;*/
 	
 	Router r(1,2,3);
 	cout << r.LAN::getID() << endl;
 	r.LAN::a = 100;
-	r.WiFi::a = 200;*/
+	r.WiFi::a = 200;
+	cout << r.LAN::a << endl;
+	cout << r.WiFi::a << endl;
 
 	////////////////  10.02.2024  //////////////////
 

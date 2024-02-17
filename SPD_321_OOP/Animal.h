@@ -4,8 +4,14 @@
 
 using namespace std;
 
+class IInfo
+{
+public:
+	virtual void info() = 0;
+};
 
-class Animal
+
+class Animal : public IInfo
 {
 	string name;
 	int age;
@@ -25,7 +31,15 @@ public:
 	{
 		return "Animal";
 	}
+
+	virtual string voice() = 0;
 };
+
+string Animal::voice()
+{
+	return "No say";
+}
+
 
 
 class Cat /*final*/: public Animal
@@ -45,6 +59,16 @@ public:
 	{
 		return "Cat";
 	}
+
+	virtual string voice() override
+	{
+		return "Maw Maw";
+	}
+
+	void info() override
+	{
+		cout << "I`m Cat - " << voice() << endl;
+	}
 };
 
 class SiamCat : public Cat
@@ -58,6 +82,16 @@ public:
 	virtual string getType() override
 	{
 		return "SiamCat";
+	}
+
+	virtual string voice() override
+	{
+		return "Myaw Myaw";
+	}
+
+	void info() override
+	{
+		cout << "I`m SiamCat - " << voice() << endl;
 	}
 };
 
@@ -73,6 +107,11 @@ public:
 	{
 		return "SiamCat";
 	}
+
+	void info() override
+	{
+		cout << "I`m SiamCat2 - " << voice() << endl;
+	}
 };
 
 class Dog : public Animal
@@ -86,5 +125,65 @@ public:
 	virtual string getType() override
 	{
 		return "Dog";
+	}
+
+	virtual string voice() override
+	{
+		return "Gaw Gaw";
+	}
+
+	void info() override
+	{
+		cout << "I`m Dog - " << voice() << endl;
+	}
+};
+
+
+class Ravlik : public Animal 
+{
+public:
+	Ravlik(string n, int a) : Animal(n, a)
+	{
+
+	}
+
+	virtual string getType() override
+	{
+		return "Ravlik";
+	}
+
+	virtual string voice() override
+	{
+		return Animal::voice();
+	}
+
+	void info() override
+	{
+		cout << "I`m Ravlik - " << voice() << endl;
+	}
+};
+
+
+class Fish : public Animal
+{
+public:
+	Fish(string n, int a) : Animal(n, a)
+	{
+
+	}
+
+	virtual string getType() override
+	{
+		return "Fish";
+	}
+
+	virtual string voice() override
+	{
+		return Animal::voice();
+	}
+
+	void info() override
+	{
+		cout << "I`m Fish - " << voice() << endl;
 	}
 };
