@@ -19,6 +19,7 @@
 #include"BasePolice.h"
 #include"Relation.h"
 #include"Inherit.h"
+#include"Animal.h"
 
 #define PI 3.141592
 #define SQR(n) (n)*(n)
@@ -53,8 +54,62 @@ auto Sum(T1 a, T2 b)
 //	h.setAge(h.getAge() + 1);
 //}
 
+
+void report(Animal& a)
+{
+	cout << a.getType() << endl;
+}
+
+
 int main()
 {
+	////////////////  17.02.2024  //////////////////
+
+
+	Animal* c = new Cat("Tom", 3);
+	cout << c->getType() << endl;
+	delete c;
+
+
+	//Cat c("Tom", 3);
+	////cout << c.getType() << endl;
+	//Dog d("Spike", 2);
+	////cout << d.getType() << endl;
+	//SiamCat sc("Murka", 4);
+	//SiamCat2 sc2("Murka", 4);
+
+
+	//Animal* pc = &c;
+	//Animal* pd = &d;
+	////cout << pc->getType() << endl;
+
+	//Animal& rc = c;
+	////cout << rc.getType() << endl;
+
+	//Animal* an[] = { &c, &d, &sc, &sc2 };
+	//for (size_t i = 0; i < 4; i++)
+	//{
+	//	cout << an[i]->getType() << endl;
+	//}
+
+	//report(c);
+	//report(d);
+
+	/*Human h;
+	h.getName();
+	
+	FootballPlayer fp("Zidan", 40, 1000);
+	fp.print();
+	
+
+	AA a;
+	BB b;
+	
+	Router r(1,2,3);
+	cout << r.LAN::getID() << endl;
+	r.LAN::a = 100;
+	r.WiFi::a = 200;*/
+
 	////////////////  10.02.2024  //////////////////
 
 	/*C::Car car;
@@ -72,8 +127,8 @@ int main()
 	car1.info();*/
 
 
-	FootballPlayer fp("Zidan", 40, 1000);
-	fp.print();
+	/*FootballPlayer fp("Zidan", 40, 1000);
+	fp.print();*/
 
 	/*Array<int> a(10);
 	Array<int> b(5);

@@ -132,6 +132,7 @@
     <ClCompile Include="SPD_321_OOP.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Animal.h" />
     <ClInclude Include="Array.h" />
     <ClInclude Include="BasePolice.h" />
     <ClInclude Include="BTree.h" />
