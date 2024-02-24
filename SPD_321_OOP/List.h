@@ -8,6 +8,12 @@
 using namespace std;
 
 template<class T>
+class List;
+
+template<class T>
+ostream& operator<<(ostream& out, const List<T>& list);
+
+template<class T>
 class List
 {
 	Node<T>* first = nullptr;
@@ -44,6 +50,8 @@ public:
 	void print() const;
 
 	size_t find(const T& value);
+
+	friend ostream& operator<< <T>(ostream& out, const List& list);
 };
 
 template<class T>
@@ -211,6 +219,12 @@ void List<T>::pop_back()
 }
 
 template<class T>
+inline T& List<T>::operator[](size_t index) const
+{
+	// TODO: вставьте здесь оператор return
+}
+
+template<class T>
 void List<T>::clear()
 {
 	Node<T>* temp = first;
@@ -234,4 +248,17 @@ void List<T>::print() const
 		temp = temp->next;
 	}
 	cout << endl;
+}
+
+template<class T>
+ostream& operator<<(ostream& out, const List<T>& list)
+{
+	Node<T>* temp = list.first;
+	while (temp)
+	{
+		out << temp->value << " ";
+		temp = temp->next;
+	}
+	out << endl;
+	return out;
 }

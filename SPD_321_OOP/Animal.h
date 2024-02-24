@@ -27,7 +27,7 @@ public:
 		cout << "Des Animal" << endl;
 	}
 
-	virtual string getType()
+	virtual string getType() const
 	{
 		return "Animal";
 	}
@@ -55,7 +55,7 @@ public:
 		cout << "Des Cat" << endl;
 	}
 
-	virtual string getType() override /*final*/
+	virtual string getType() const override /*final*/
 	{
 		return "Cat";
 	}
@@ -79,7 +79,7 @@ public:
 
 	}
 
-	virtual string getType() override
+	virtual string getType() const override
 	{
 		return "SiamCat";
 	}
@@ -103,7 +103,7 @@ public:
 
 	}
 
-	virtual string getType() override
+	virtual string getType() const override
 	{
 		return "SiamCat";
 	}
@@ -122,7 +122,7 @@ public:
 
 	}
 
-	virtual string getType() override
+	virtual string getType() const override
 	{
 		return "Dog";
 	}
@@ -147,7 +147,7 @@ public:
 
 	}
 
-	virtual string getType() override
+	virtual string getType() const override
 	{
 		return "Ravlik";
 	}
@@ -172,7 +172,7 @@ public:
 
 	}
 
-	virtual string getType() override
+	virtual string getType() const override
 	{
 		return "Fish";
 	}

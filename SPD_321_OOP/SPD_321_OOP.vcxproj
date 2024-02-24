@@ -146,7 +146,9 @@
     <ClInclude Include="Inherit.h" />
     <ClInclude Include="List.h" />
     <ClInclude Include="Menu.h" />
+    <ClInclude Include="MyException.h" />
     <ClInclude Include="Node.h" />
+    <ClInclude Include="NS.h" />
     <ClInclude Include="Point.h" />
     <ClInclude Include="Queue.h" />
     <ClInclude Include="Relation.h" />

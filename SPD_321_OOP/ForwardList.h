@@ -4,6 +4,7 @@
 #include<cassert>
 
 #include"Node.h"
+#include"MyException.h"
 
 using namespace std;
 
@@ -50,12 +51,20 @@ public:
 template<class T>
 Node<T>* ForwardList<T>::getNode(size_t index) const
 {
-	Node<T>* pos = first;
-	for (size_t i = 0; i < index; i++)
+	try
 	{
-		pos = pos->next;
+		Node<T>* pos = first;
+		for (size_t i = 0; i < index; i++)
+		{
+			pos = pos->next;
+		}
+		return pos;
 	}
-	return pos;
+	catch (exception& ex)
+	{
+		cout << "Error" << endl;
+		cout << ex.what() << endl;
+	}
 }
 
 template<class T>
@@ -213,8 +222,16 @@ inline T& ForwardList<T>::back() const
 template<class T>
 T& ForwardList<T>::at(size_t index) const
 {
-	assert(index >= 0 && index < size);
-	return this->getNode(index)->value;
+	try 
+	{
+		if (index < 0 || index >= size)
+			throw MyMathException(__DATE__, __TIME__, __FILE__, "Index out of trange", __LINE__, index);
+		return this->getNode(index)->value;
+	}
+	catch (exception& ex)
+	{
+		throw;
+	}
 }
 
 template<class T>

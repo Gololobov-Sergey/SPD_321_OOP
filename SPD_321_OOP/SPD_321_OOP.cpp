@@ -20,6 +20,7 @@
 #include"Relation.h"
 #include"Inherit.h"
 #include"Animal.h"
+#include"NS.h"
 
 #define PI 3.141592
 #define SQR(n) (n)*(n)
@@ -28,7 +29,7 @@
 #define TEST
 #define SIZE 50
 
-using namespace std;
+//using namespace std;
 
 template<class T>
 void printArray(Array<T> a)
@@ -55,9 +56,9 @@ auto Sum(T1 a, T2 b)
 //}
 
 
-void report(IInfo* a)
+void report(const Animal* a)
 {
-	a->info();
+	cout << a->getType() << endl;
 }
 
 
@@ -71,13 +72,98 @@ double SQRT(double d, ILogError* log)
 	return sqrt(d);
 }
 
+//void foo()
+//{
+//	try
+//	{
+//		throw 'a';
+//	}
+//	catch(int a)
+//	{
+//
+//	}
+//}
+
+//using namespace Foo;
+//using namespace Boo;
+
+namespace Goo = Foo::Doo;
+
 int main()
 {
+	////////////////  24.02.2024  //////////////////
+
+	//foo();
+	
+	
+
+	{
+		using Foo::foo;
+		foo();
+		std::cout << std::endl;
+	}
+	{
+		using namespace Boo;
+		foo();
+	}
+	Goo::foo();
+	Boo::foo();
+
+	
+
+	/*try
+	{
+		ExB b(-10);
+	}
+	catch (int)
+	{
+		cout << "Error" << endl;
+	}*/
+
+
+	//ForwardList<int> l = { 1,2,3,5,67 };
+	//try
+	//{
+	//	//foo();
+	//	//cout << l[10] << endl;
+	//	//throw - 1;
+	//	/*throw - 1.2;
+	//	throw '2';
+	//	throw new List<int>();*/
+	//	cout << l[10] << endl;
+	//}
+	//catch (int a)
+	//{
+	//	cout << a << endl;
+	//}
+	//catch (double a)
+	//{
+	//	cout << a << endl;
+	//}
+	//catch (MyException& a)
+	//{
+	//	a.saveLog();
+	//	cout << a.getConsole() << endl;
+	//}
+	//catch (exception& a)
+	//{
+	//	FileLogError f("log.txt");
+	//	f.writeError(a.what());
+	//}
+	//catch (...)
+	//{
+	//	cout << "Fatal error" << endl;
+	//}
+
+
 	////////////////  17.02.2024  //////////////////
+
+	/*List<int> l = { 1,2,3,5,67 };
+	cout << l << endl;
 
 
 	cout << SQRT(-15, new FileLogError("log.txt")) << endl;
-	cout << SQRT(-15, new ConsoleLogError()) << endl;
+	cout << SQRT(-15, new ConsoleLogError()) << endl;*/
 
 
 	//Animal a("no name", 0);
@@ -141,12 +227,12 @@ int main()
 	AA a;
 	BB b;*/
 	
-	Router r(1,2,3);
+	/*Router r(1,2,3);
 	cout << r.LAN::getID() << endl;
 	r.LAN::a = 100;
 	r.WiFi::a = 200;
 	cout << r.LAN::a << endl;
-	cout << r.WiFi::a << endl;
+	cout << r.WiFi::a << endl;*/
 
 	////////////////  10.02.2024  //////////////////
 

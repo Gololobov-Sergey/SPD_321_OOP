@@ -1,0 +1,2 @@
+Feb 24 2024 | 15:24:45 | C:\Users\golol\source\repos\SPD_321_OOP\SPD_321_OOP\ForwardList.h | 228 | Index out of trange
+Feb 24 2024 | 15:29:24 | C:\Users\golol\source\repos\SPD_321_OOP\SPD_321_OOP\ForwardList.h | 228 | Index out of trange | 10
