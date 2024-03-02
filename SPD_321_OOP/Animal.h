@@ -44,6 +44,8 @@ string Animal::voice()
 
 class Cat /*final*/: public Animal
 {
+	int mouse = 5;
+
 public:
 	Cat(string n, int a) : Animal(n, a)
 	{
@@ -68,6 +70,11 @@ public:
 	void info() override
 	{
 		cout << "I`m Cat - " << voice() << endl;
+	}
+
+	int getMouse()
+	{
+		return mouse;
 	}
 };
 

@@ -21,6 +21,7 @@
 #include"Inherit.h"
 #include"Animal.h"
 #include"NS.h"
+#include"SmartPointer.h"
 
 #define PI 3.141592
 #define SQR(n) (n)*(n)
@@ -32,17 +33,30 @@
 //using namespace std;
 
 template<class T>
-void printArray(Array<T> a)
+void printArray(Array<T>&& a)
 {
 	a.print();
 }
 
 
-void func(float f)
+void func()
 {
+	SmartPointer<Cat> c(new Cat("Tom", 2));
+	SmartPointer<Cat> cc(c);
+	
+	int a;
+	cin >> a;
+	if (a == 0)
+		return;
+
 
 }
 
+Cat ffff()
+{
+	Cat c("Tom", 2);
+	return c;
+}
 
 template<class T1, class T2>
 auto Sum(T1 a, T2 b)
@@ -91,13 +105,91 @@ namespace Goo = Foo::Doo;
 
 int main()
 {
+	////////////////  02.03.2024  //////////////////
+	
+
+	int a = 5, b = 25;
+	int&& ra = 10;
+	ra = 10;
+	
+
+	unique_ptr<Cat> c(new Cat("Tom", 2));
+	unique_ptr<Cat> c1(new Cat("Tom", 2));
+	
+
+	printArray(Array<int>(10));
+
+	//SetColor(White, Red);
+	//system("cls");
+
+
+	//cout.setf(ios::boolalpha | ios::showpos | ios::uppercase);
+	//cout.unsetf(ios::boolalpha);
+
+	//cout << /*noboolalpha <<*/ true << endl;
+
+	//cout.fill('.');
+
+	//cout << setw(10)<< left << -1254 << "papa" << endl;
+	//cout << setw(10)<< right << -1254 << "papa" << endl;
+	//cout << setw(10)<< internal << -1254 << "papa" << endl;
+	//cout << setw(10)<< internal << 1254 << "papa" << endl;
+
+	//cout << 123 << endl;
+	//cout << -123 << endl;
+
+	//SetColor(LightRed, Black);
+	////cout.unsetf(ios::dec);
+	//cout.setf(ios::hex, ios::basefield);
+	//cout << dec << /*nouppercase <<*/ 255 << endl;
+
+
+	//cout << fixed;
+	//cout << setprecision(1) << 123.456 << endl;
+	//cout << setprecision(2) << 123.456 << endl;
+	//cout << setprecision(3) << 123.456 << endl;
+	//cout << setprecision(4) << 123.456 << endl;
+	//cout << setprecision(5) << 123.456 << endl;
+	//cout << setprecision(6) << 123.456 << endl;
+	//cout << setprecision(7) << 123.456 << endl;
+
+	//SetColor(White, Red);
+	//cout << scientific;
+	//cout << setprecision(1) << 123.456 << endl;
+	//cout << setprecision(2) << 123.456 << endl;
+	//cout << setprecision(3) << 123.456 << endl;
+	//cout << setprecision(4) << 123.456 << endl;
+	//cout << setprecision(5) << 123.456 << endl;
+	//cout << setprecision(6) << 123.456 << endl;
+	//cout << setprecision(7) << 123.456 << endl;
+
+
+	//gotoxy(40, 5);
+	//cout.width(10);
+	//cout << "mama";
+	
+
+	/*Animal* c = new Cat("Tom", 3);
+	
+	Cat* cc = dynamic_cast<Cat*>(c);
+	if(cc != nullptr)
+		cout << cc->getMouse() << endl;*/
+
+
+	/*string s = "mama";
+	hash<string> h;
+	auto f = h(s);
+	cout << h("mama") << endl;
+	cout << h("mam") << endl;*/
+
+
 	////////////////  24.02.2024  //////////////////
 
 	//foo();
 	
 	
 
-	{
+	/*{
 		using Foo::foo;
 		foo();
 		std::cout << std::endl;
@@ -107,7 +199,7 @@ int main()
 		foo();
 	}
 	Goo::foo();
-	Boo::foo();
+	Boo::foo();*/
 
 	
 
