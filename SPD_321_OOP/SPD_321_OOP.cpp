@@ -22,6 +22,9 @@
 #include"Animal.h"
 #include"NS.h"
 #include"SmartPointer.h"
+#include"Functor.h"
+#include<algorithm>
+#include<vector>
 
 #define PI 3.141592
 #define SQR(n) (n)*(n)
@@ -42,7 +45,7 @@ void printArray(Array<T>&& a)
 void func()
 {
 	SmartPointer<Cat> c(new Cat("Tom", 2));
-	SmartPointer<Cat> cc(c);
+	//SmartPointer<Cat> cc(c);
 	
 	int a;
 	cin >> a;
@@ -103,12 +106,140 @@ double SQRT(double d, ILogError* log)
 
 namespace Goo = Foo::Doo;
 
+
+void fffff(void(*f)(int))
+{
+
+}
+
+//void mult2(int a)
+//{
+//	cout << a * 2 << " ";
+//}
+
+template<class T>
+class my_vector : public vector<T>
+{
+public:
+	my_vector(initializer_list<T> l) :vector<T>(l) {}
+	my_vector() {}
+
+	void print()
+	{
+		for (T v : *this)
+		{
+			cout << v << " ";
+		}
+		cout << endl;
+	}
+};
+
+template<class T>
+void print(T& container)
+{
+	for (auto& e : container)
+	{
+		cout << e << " ";
+	}
+	cout << endl;
+}
+
 int main()
 {
+	////////////////  09.03.2024  //////////////////
+	
+	vector<int> v0;
+	vector<int> v({99,2,45,7,6,54,433});
+	vector<int> v1(v.begin() + 1, v.begin() + 4);
+	print(v);
+
+	erase(v, 2);
+	erase_if(v, [](int a) { return a < 10; });
+
+	print(v);
+
+
+	for (auto i = v.begin(); i != v.end(); i++)
+	{
+		cout << *i << " ";
+	}
+	cout << endl;
+
+	for (auto i = v.rbegin(); i != v.rend(); i++)
+	{
+		cout << *i << " ";
+	}
+	cout << endl;
+
+
+	//vector<int>::iterator i = v.begin();
+	auto i = v.begin() + 3;
+	cout << *i << endl;
+
+	/*cout << v.max_size() << endl;
+	v.push_back(99);
+	cout << v.size() << endl;
+	cout << v.capacity() << endl;
+	v.pop_back();
+	v.pop_back();
+	v.pop_back();
+	v.pop_back();
+	cout << v.size() << endl;
+	cout << v.capacity() << endl;
+	v.shrink_to_fit();
+	cout << v.size() << endl;
+	cout << v.capacity() << endl;*/
+
+	v.insert(v.begin() + 3, 9999);
+	v.insert(v.begin() + 3, v.begin()+1, v.begin()+3);
+	print(v);
+
+	vector<Cat> cc;
+	cc.emplace(cc.begin(), "Tom", 4);
+	//print(cc);
+	int ccc = 0;
+
+	/*ContainerInfo c;
+
+	List<int> l = { 1,2,4,7,7,5,3,2,2,4,6 };
+	for (size_t i = 0; i < l.length(); i++)
+	{
+		c(l[i]);
+	}
+
+	cout << c.getEvenCount() << endl;
+	c.clear();
+	
+	int a[] = { 1,12,3,45,6,6 };
+	c = for_each(a, a + 6, c);
+	cout << c.getEvenCount() << endl;*/
+
+
+	// *(a + 6) = a[6]
+
+	/*auto f = []() { cout << "Hello" << endl; };
+	f();
+
+	auto ff = [](int a)->double {
+		if (a > 0)
+			return 3;
+		else
+			return 5.2;
+		};
+
+	ff(50);
+
+	int b = 9, cc = 10;
+	auto gg = [=, &cc]() { cout << b << " " << ++cc << endl; };
+	gg();
+
+	auto fff = [](int a) {cout << a * 2 << " "; };
+	fff(10);*/
+
 	////////////////  02.03.2024  //////////////////
 	
 
-	int a = 5, b = 25;
+	/*int a = 5, b = 25;
 	int&& ra = 10;
 	ra = 10;
 	
@@ -116,8 +247,10 @@ int main()
 	unique_ptr<Cat> c(new Cat("Tom", 2));
 	unique_ptr<Cat> c1(new Cat("Tom", 2));
 	
+	unique_ptr<Cat> c2 = make_unique<Cat>("Tom", 2);
+	
 
-	printArray(Array<int>(10));
+	printArray(Array<int>(10));*/
 
 	//SetColor(White, Red);
 	//system("cls");

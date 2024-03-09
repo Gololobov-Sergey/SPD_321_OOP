@@ -221,7 +221,7 @@ void List<T>::pop_back()
 template<class T>
 inline T& List<T>::operator[](size_t index) const
 {
-	// TODO: вставьте здесь оператор return
+	return getNode(index)->value;
 }
 
 template<class T>
@@ -236,6 +236,12 @@ void List<T>::clear()
 	}
 	size = 0;
 	last = nullptr;
+}
+
+template<class T>
+inline size_t List<T>::length() const
+{
+	return size;
 }
 
 template<class T>

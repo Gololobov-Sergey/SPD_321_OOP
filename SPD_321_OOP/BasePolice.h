@@ -51,7 +51,7 @@ public:
 void BasePolice::menu()
 {
 	load();
-	do
+	/*do
 	{
 		system("cls");
 		int c = Menu::select_vertical({ 
@@ -72,7 +72,7 @@ void BasePolice::menu()
 		case 5: save();  exit(0);
 		}
 
-	} while (true);
+	} while (true);*/
 }
 void BasePolice::addProtocol()
 {
