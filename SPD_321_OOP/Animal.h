@@ -13,6 +13,7 @@ public:
 
 class Animal : public IInfo
 {
+protected:
 	string name;
 	int age;
 
@@ -24,7 +25,7 @@ public:
 
 	virtual ~Animal()
 	{
-		cout << "Des Animal" << endl;
+		//cout << "Des Animal" << endl;
 	}
 
 	virtual string getType() const
@@ -47,14 +48,14 @@ class Cat /*final*/: public Animal
 	int mouse = 5;
 
 public:
-	Cat(string n, int a) : Animal(n, a)
+	Cat(string n, int a, int m) : Animal(n, a), mouse(m)
 	{
 
 	}
 
 	~Cat()
 	{
-		cout << "Des Cat" << endl;
+		//cout << "Des Cat" << endl;
 	}
 
 	virtual string getType() const override /*final*/
@@ -76,12 +77,21 @@ public:
 	{
 		return mouse;
 	}
+
+	friend ostream& operator<<(ostream& out, const Cat& c);
 };
+
+ostream& operator<<(ostream& out, const Cat& c)
+{
+	out << c.name << " " << c.age << " " << c.mouse;
+	return out;
+}
+
 
 class SiamCat : public Cat
 {
 public:
-	SiamCat(string n, int a) : Cat(n, a)
+	SiamCat(string n, int a) : Cat(n, a, 0)
 	{
 
 	}

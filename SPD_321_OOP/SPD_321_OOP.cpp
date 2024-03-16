@@ -25,6 +25,9 @@
 #include"Functor.h"
 #include<algorithm>
 #include<vector>
+#include<array>
+#include<list>
+#include<map>
 
 #define PI 3.141592
 #define SQR(n) (n)*(n)
@@ -44,7 +47,7 @@ void printArray(Array<T>&& a)
 
 void func()
 {
-	SmartPointer<Cat> c(new Cat("Tom", 2));
+	SmartPointer<Cat> c(new Cat("Tom", 2, 5));
 	//SmartPointer<Cat> cc(c);
 	
 	int a;
@@ -57,7 +60,7 @@ void func()
 
 Cat ffff()
 {
-	Cat c("Tom", 2);
+	Cat c("Tom", 2, 2);
 	return c;
 }
 
@@ -144,37 +147,101 @@ void print(T& container)
 	cout << endl;
 }
 
+bool oddFirst(int a, int b)
+{
+	if (a % 2 == 0 && b % 2 == 1)
+		return false;
+	if (a % 2 == 1 && b % 2 == 0)
+		return true;
+	return a < b;
+}
+
 int main()
 {
+	cout.setf(ios::boolalpha);
+
+	////////////////  16.03.2024  //////////////////
+
+
+	list<int> l(10);
+	//cout << all_of(l.begin(), l.end(), [](int a) { return a > 10; }) << endl;
+	generate(l.begin(), l.end(), []() {return rand() % 10; });
+	copy(l.begin(), l.end(),ostream_iterator<int>(cout, " "));
+
+	/*array<int, 30> a = { 0 };
+	cout << a.max_size() << endl;
+
+
+	int aa[] = {1,2,3};
+
+
+	list<int> l = { 1,32,5,7,8,56,43 };
+	auto it = l.begin();
+	advance(it, 2);
+	cout << *it << endl;
+	l.insert(it, 999);
+	print(l);
+	cout << distance(it, l.begin()) << endl;
+	l.sort(oddFirst);
+	print(l);
+	
+
+	list<Cat> lc = {
+		Cat("Tom1", 5, 20),
+		Cat("Tom2", 5, 40),
+		Cat("Tom3", 5, 2),
+		Cat("Tom4", 5, 20),
+		Cat("Tom5", 5, 100),
+		Cat("Tom6", 5, 15)
+	};
+
+	print(lc);
+
+	lc.sort([](Cat& c1, Cat& c2) {return c1.getMouse() > c2.getMouse(); });
+	print(lc);
+
+
+	std::map<int, std::string> m{ {1, "mango"}, {2, "papaya"}, {3, "guava"} };
+	auto nh = m.extract(2);
+	nh.key() = 4;
+	m.insert(std::move(nh));
+
+	auto it1 = m.find(11);
+	if (it1 != m.end())
+	{
+		cout << (*it1).first << " " << (*it1).second << endl;
+	}*/
+	
+
 	////////////////  09.03.2024  //////////////////
 	
-	vector<int> v0;
-	vector<int> v({99,2,45,7,6,54,433});
-	vector<int> v1(v.begin() + 1, v.begin() + 4);
-	print(v);
+	//vector<int> v0;
+	//vector<int> v({99,2,45,7,6,54,433});
+	//vector<int> v1(v.begin() + 1, v.begin() + 4);
+	//print(v);
 
-	erase(v, 2);
-	erase_if(v, [](int a) { return a < 10; });
+	//erase(v, 2);
+	//erase_if(v, [](int a) { return a < 10; });
 
-	print(v);
-
-
-	for (auto i = v.begin(); i != v.end(); i++)
-	{
-		cout << *i << " ";
-	}
-	cout << endl;
-
-	for (auto i = v.rbegin(); i != v.rend(); i++)
-	{
-		cout << *i << " ";
-	}
-	cout << endl;
+	//print(v);
 
 
-	//vector<int>::iterator i = v.begin();
-	auto i = v.begin() + 3;
-	cout << *i << endl;
+	//for (auto i = v.begin(); i != v.end(); i++)
+	//{
+	//	cout << *i << " ";
+	//}
+	//cout << endl;
+
+	//for (auto i = v.rbegin(); i != v.rend(); i++)
+	//{
+	//	cout << *i << " ";
+	//}
+	//cout << endl;
+
+
+	////vector<int>::iterator i = v.begin();
+	//auto i = v.begin() + 3;
+	//cout << *i << endl;
 
 	/*cout << v.max_size() << endl;
 	v.push_back(99);
@@ -190,14 +257,14 @@ int main()
 	cout << v.size() << endl;
 	cout << v.capacity() << endl;*/
 
-	v.insert(v.begin() + 3, 9999);
-	v.insert(v.begin() + 3, v.begin()+1, v.begin()+3);
-	print(v);
+	//v.insert(v.begin() + 3, 9999);
+	//v.insert(v.begin() + 3, v.begin()+1, v.begin()+3);
+	//print(v);
 
-	vector<Cat> cc;
-	cc.emplace(cc.begin(), "Tom", 4);
+	//vector<Cat> cc;
+	//cc.emplace(cc.begin(), "Tom", 4);
 	//print(cc);
-	int ccc = 0;
+	//int ccc = 0;
 
 	/*ContainerInfo c;
 
